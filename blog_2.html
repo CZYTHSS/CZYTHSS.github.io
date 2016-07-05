@@ -57,7 +57,7 @@
                 margin: 0;
                 letter-spacing: 2px;
             }
-            canvas {
+           <!--  canvas {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -65,7 +65,7 @@
                 width: 100%;
                 height: 100%;
                 pointer-events: none;
-            }
+            } -->
             a {
                 color: #999;
                 text-decoration: none;
@@ -205,55 +205,128 @@
 如有需要发布的内容，请在 Github Pages 中进行发布，在文档和课程作业提交内 容中都写明发布的链接。 
 			</h2>
         </div>
-        <canvas></canvas>
+<!--         <canvas></canvas> -->
 
-		        <script>
-            document.addEventListener('touchmove', function (e) {
-                e.preventDefault()
-            })
-            var c = document.getElementsByTagName('canvas')[0],
-                x = c.getContext('2d'),
-                pr = window.devicePixelRatio || 1,
-                w = window.innerWidth,
-                h = window.innerHeight,
-                f = 90,
-                q,
-                m = Math,
-                r = 0,
-                u = m.PI*2,
-                v = m.cos,
-                z = m.random
-            c.width = w*pr
-            c.height = h*pr
-            x.scale(pr, pr)
-            x.globalAlpha = 0.6
-            function i(){
-                x.clearRect(0,0,w,h)
-                q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
-                while(q[1].x<w+f) d(q[0], q[1])
-            }
-            function d(i,j){   
-                x.beginPath()
-                x.moveTo(i.x, i.y)
-                x.lineTo(j.x, j.y)
-                var k = j.x + (z()*2-0.25)*f,
-                    n = y(j.y)
-                x.lineTo(k, n)
-                x.closePath()
-                r-=u/-50
-                x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
-                x.fill()
-                q[0] = q[1]
-                q[1] = {x:k,y:n}
-            }
-            function y(p){
-                var t = p + (z()*2-1.1)*f
-                return (t>h||t<0) ? y(p) : t
-            }
-            document.onclick = i
-            document.ontouchstart = i
-            i()
-        </script>
+  		<style>
+body {
+    height: 3000px;
+}
+
+.top {
+    position: absolute;
+    top: 120px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-decoration: none;
+    text-align: center;
+    background-color: #666666;
+    color: #ffffff;
+    right: 10px;
+    transition: all 0s;
+    visibility: hidden;
+}
+.top:hover {
+    background-color: #ff3300;
+}
+
+
+		</style> 
+	<a id = "BackToTop" onclick = "goScrollTop()" class="top">顶部</a>
+	
+	<script>
+
+		var ele_body = document.body;
+		var ele_top = document.getElementsByClassName("top")[0];
+		var n_half_height = window.screen.height / 2;
+
+		var originHeight = window.screen.height - 200;
+		window.onscroll = function (e) {
+		  var n_stop = e.target.scrollingElement.scrollTop;
+		  if (n_stop === 0 ) {
+			  ele_top.style.visibility = "hidden";
+		  }else {
+			  ele_top.style.visibility = "visible";
+		  }
+		 var n_top = n_stop + originHeight;
+		 ele_top.style.top = n_top + "px";
+		}
 		
+		function goScrollTop() {
+		//把内容滚动指定的像素数（第一个参数是向右滚动的像素数，第二个参数是向下滚动的像素数）
+		//向上是负数，向下是正数
+		window.scrollBy(0, -80);
+		//延时递归调用，模拟滚动向上效果
+		scrolldelay = setTimeout('goScrollTop()', 10);
+		//获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和值可以得到网页的真正的scrollTop值
+		var sTop = document.documentElement.scrollTop + document.body.scrollTop;
+		//判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）
+		if (sTop == 0) clearTimeout(scrolldelay);
+	}
+		//键盘事件，采用ctrl+up的组合键可以返回顶部。
+		window.onkeydown = function(e){
+			e = window.event || e;
+			
+			//ctrl + up
+			if(e.keyCode == 38 && e.ctrlKey) goScrollTop();
+			
+			//ctrl + left 移动至左下
+			if(e.keyCode == 37 && e.ctrlKey) initLeftDown();
+			
+			//ctrl + left + shift移动至左上
+			if(e.keyCode == 37 && e.ctrlKey && e.shiftKey) initLeftUp();
+			
+			//ctrl + right 移动至右下
+			if(e.keyCode == 39 && e.ctrlKey) initRightDown();
+			
+			//ctrl + right + shift 移动至右上
+			if(e.keyCode == 39 && e.ctrlKey & e.shiftKey) initRightUp();
+			
+		}
+		
+		//更改控件位置
+		
+		function initLeftDown(){
+				var obj = document.getElementById("BackToTop");
+				var width = window.screen.width;
+				width -= 130;
+				originHeight = window.screen.height - 200;
+				obj.style.setProperty("right",width + "px");
+		}
+		
+		function initLeftUp(){
+			originHeight = 100;
+			var obj = document.getElementById("BackToTop");
+			var width = window.screen.width;
+			width -= 130;
+			obj.style.setProperty("right",width + "px");
+		}
+		
+		function initRightDown(){
+			originHeight = window.screen.height - 200;
+			var obj = document.getElementById("BackToTop");
+			obj.style.setProperty("right","10px");
+		}
+		
+		function initRightUp(){
+			originHeight = 100;
+			var obj = document.getElementById("BackToTop");
+			obj.style.setProperty("right","10px");
+		}
+		
+		function init(){
+			if(arguments[0].hasOwnProperty("x")){
+				var right = window.screen.width - arguments[0].x;
+				console.log(right);
+				var obj = document.getElementById("BackToTop");
+				obj.style.setProperty("right",right + "px");
+				originHeight = arguments[0].y;
+			}
+		}
+		
+	</script> 
+	
+
     </body>
 </html>
