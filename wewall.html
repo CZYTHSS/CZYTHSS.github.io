@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="format-detection" content="email=no"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport">
+        <title>聊天墙</title>
+        <link rel="stylesheet" type="text/css" href="./style.css" />
+        <!--[if lt IE 8]><script src="./json3.min.js"></script><![endif]-->
+        <script src="http://realtime.plhwin.com/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+		<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    </head>
+    <body>
+        <div id="chatbox" style="display:block;width:100%">
+            <div style="background:#3d3d3d;height: 5vh; width: 100%;font-size:4vh;">
+                <div style="line-height: 5vh;color:#fff;">
+                    <span style="text-align:left;margin-left:5%;">聊天墙</span>
+                <!--     <span style="float:right; margin-right:10px;"><span id="showusername"></span>	 -->
+                </div>
+            </div>
+            
+			<div id="chat">
+				<div id="message1" class="msg" >
+					<div style="height:100%; width:8%;float:left;display:inline;margin-right:2vw;
+					overflow: hidden; ">
+					<div id="username1" class="username">usernaqweqweqweqweqfghfhfhfhfghgfweqweqe</div>
+					<div>
+					<img id="img1" src="imgur.jpg"  height="100%" width="100%" class="bigger-animation" /></div>
+					</div>
+					<div id="div-t1" class="text-content"><marquee id="text1" width="85%" behavior="scroll"
+					scrollamount="12" >markd</marquee>
+					</div>
+				</div>
+				
+				<div id="message2" class="msg" >
+					<div style="height:100%; width:8%;float:left;display:inline;margin-right:2vw;
+					overflow: hidden; ">
+					<div id="username2" class="username" height="15vh">username</div>
+					<div >
+					<img id="img2" src="loading.gif"  height="100%" width="100%" class="bigger-animation" /></div>
+					</div>
+					<div class="text-content"><marquee id="text2" width="85%" behavior="scroll"
+					scrollamount="12" >markd</marquee>
+					</div>
+				</div>
+				
+				<div id="message3" class="msg" >
+					<div style="height:100%; width:8%;float:left;display:inline;margin-right:2vw;
+					overflow: hidden; ">
+					<div id="username3" class="username">usernaqweqweqweqweqfghfhfhfhfghgfweqweqe</div>
+					<div >
+					<img id="img3" src="imgur.jpg"  height="100%" width="100%" class="bigger-animation" /></div>
+					</div>
+					<div class="text-content"><marquee id="text3" width="85%" behavior="scroll"
+					scrollamount="12" >markd</marquee>
+					</div>
+				</div>
+				
+				<div id="announcement" style="
+	margin:1%1%;
+	text-align:left;
+	background:#C0C0C0;
+	height: 8vh; 
+	width: 98vw;
+	font-size:3vw;
+	overflow: hidden;
+" >
+						<nobr>
+						<marquee id="announcement-text" width="100%" behavior="alternate"><font color="yellow">这是一条伪公告</font>
+						</marquee></nobr>
+                    </div>
+				</div>
+		
+        <script type="text/javascript" src="./client.js"></script>
+    </body>
+</html>
