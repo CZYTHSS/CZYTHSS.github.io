@@ -6,6 +6,7 @@ socket = io('https://wall.cgcgbcbc.com');
 //作为刷新时需要获取前三条历史消息
 $.get("https://wall.cgcgbcbc.com/api/messages?num=3",function(arr){
 	
+
 	var username1 = document.getElementById('username1');
 	var username2 = document.getElementById('username2');
 	var username3 = document.getElementById('username3');
@@ -30,6 +31,13 @@ $.get("https://wall.cgcgbcbc.com/api/messages?num=3",function(arr){
 	img3.setAttribute("src","loading.gif");		//同上
 	img3.setAttribute("src",arr[0].headimgurl);
 });
+
+$.get("test.php",function(arr){
+	
+	alert(arr);
+	/* console.log(arr.title);  */
+});
+
 
 //当获得一个新的消息时进行相应
 socket.on('new message',function(obj){
@@ -110,6 +118,5 @@ function finishAdmin(){
 	var ttext = document.getElementById("div-t1");
 		ttext.setAttribute("style","color:black");
 	});
-	
 }
 
