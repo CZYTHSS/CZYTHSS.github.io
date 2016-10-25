@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mark Chen</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width = device-width,initial-scale=1">
+        <link rel="icon" href="data:image/vnd.microsoft.icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERERERERERERERERERERERERERERERERAAAAAAEREREAAAAAAREREQABERERERERAAEREREREREAAAAAEREREQAAAAARERERAAEREREREREAAREREREREQAAAAABERERAAAAAAEREREREREREREREREREREREREREREREREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" type="image/x-icon">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700' rel='stylesheet' type='text/css'>
+        <style>
+            html, body {
+                //overflow: hidden;
+                margin: 0;
+				background-image:url(bg.jpg);
+            }
+            body {
+                font-family: 'Open Sans', 'Helvetica Neue', 'Hiragino Sans GB', 'LiHei Pro', Arial, sans-serif;
+                color: #333;
+            }
+            #wrapper {
+                position: absolute;
+                left: 0;
+                width: 720px;
+                text-align: center;
+                top: 25%;
+                left: 35%;
+                margin-left: -160px;
+                margin-top: -160px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
+            h1 {
+                font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+                font-weight: 700;
+                font-size: 30px;
+                letter-spacing: 9px;
+                text-transform: uppercase;
+                margin: 12px 0;
+                left: 4px;
+            }
+            h2 {
+                color: black;
+                font-weight: normal;
+                font-size: 20px;
+				text-align:left;
+                letter-spacing: .12em;
+                margin-bottom: 30px;
+                left: 3px;
+            }
+            h1, h2 {
+                position: relative;
+            }
+            p {
+                font-size: 14px;
+                line-height: 2em;
+                margin: 0;
+                letter-spacing: 2px;
+            }
+           <!--  canvas {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+            } -->
+            a {
+                color: #999;
+                text-decoration: none;
+                transition: color .2s ease;
+            }
+            a:hover {
+                color: #f33;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>第三篇日志：结对编程总结</h1>
+			<br/>
+            <h2>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            这次结对编程实践是一次奇妙是实践，虽然以前也经常随性的使用“结对编程”的方式进行开发，
+        但更多的是没有什么原则的，随意的讨论的结对编程方式。这次要在摄像头前面完成体验确实很新奇。
+      </br>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            这次结对编程我们主要的工作内容就是完成了微信开发作业中接口十二的开发，由于之前已经开发了
+            几个别的接口，总体而言并没有太大的障碍。在其中遇到的一个困难就是由于这次的接口参数不是
+            确定的，而是一个或逻辑。它有一个参数的是确定的，而ticket和studentId参数只需要接收一个
+            即可。因此我们重新实现了一下check_input函数，使之能够适应这种情况。还有一个小插曲就是，
+            在我们进行录屏的时候，录制到一半时突然硬盘空间不足了，因此我们录屏只有开发前半部分的内容，
+            不过希望并没有造成太大的影响。
+      </br>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            通过体验结对编程我可以感受到，结对编程的好处是显而易见的。因为有两个人在同时作业，两个人之
+        间可以相互监督，提高工作效率（至少比一个人单独的时候要高，但与两个人单独工作的效率加总不好判断）。
+        此外，有一个人负责看着写代码，相当于进行实时的code review，可以提高代码的正确性，减少之后
+        出现bug的几率，也降低调试代码的工作量。并且，最重要的是，两个人相互讨论，可以更快的解决一些复杂
+        的问题。一个人思考往往会进入思维误区，两个人一同思考则可以集思广益，一般情况下，可以更快更好的解决
+        复杂的问题。
+      </br>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;并且，在结对编程之前的准备活动，往往会进行代码框架设计的讨论，以决定
+      编写的方式方法，这些讨论可以更加有利于实现一个更完善清晰的代码框架。同时加深团队中
+      各开发者对代码细节的了解。
+      </br>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但同时，也不是所有的工程都适合结对编程开发，
+      如果结对编程开发的对象工程是一些技术难度较低的重复性活动，结对编程反而会降低开发的效率。或者如果
+      结对双方都还不甚了解开发工程的内容的话，也是不适合采用这种方法的。
+      </br>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      总而言之就是，结对编程是一种很好的开发方法，但它也绝不是医治百病的良药，只有合理的在工程
+      开发之中使用结对编程的方法，才能够取得最好的开发效果，提高代码质量，使得工程开发事半功倍！
+			</h2>
+        </div>
+<!--         <canvas></canvas> -->
+
+  		<style>
+body {
+    height: 3000px;
+}
+
+.top {
+    position: absolute;
+    top: 120px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-decoration: none;
+    text-align: center;
+    background-color: #666666;
+    color: #ffffff;
+    right: 10px;
+    transition: all 0s;
+    visibility: hidden;
+}
+.top:hover {
+    background-color: #ff3300;
+}
+
+
+		</style>
+	<a id = "BackToTop" onclick = "goScrollTop()" class="top">顶部</a>
+
+	<script>
+
+		var ele_body = document.body;
+		var ele_top = document.getElementsByClassName("top")[0];
+		var n_half_height = window.screen.height / 2;
+
+		var originHeight = window.screen.height - 200;
+		window.onscroll = function (e) {
+		  var n_stop = e.target.scrollingElement.scrollTop;
+		  if (n_stop === 0 ) {
+			  ele_top.style.visibility = "hidden";
+		  }else {
+			  ele_top.style.visibility = "visible";
+		  }
+		 var n_top = n_stop + originHeight;
+		 ele_top.style.top = n_top + "px";
+		}
+
+		function goScrollTop() {
+		//把内容滚动指定的像素数（第一个参数是向右滚动的像素数，第二个参数是向下滚动的像素数）
+		//向上是负数，向下是正数
+		window.scrollBy(0, -80);
+		//延时递归调用，模拟滚动向上效果
+		scrolldelay = setTimeout('goScrollTop()', 10);
+		//获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和值可以得到网页的真正的scrollTop值
+		var sTop = document.documentElement.scrollTop + document.body.scrollTop;
+		//判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）
+		if (sTop == 0) clearTimeout(scrolldelay);
+	}
+		//键盘事件，采用ctrl+up的组合键可以返回顶部。
+		window.onkeydown = function(e){
+			e = window.event || e;
+
+			//ctrl + up
+			if(e.keyCode == 38 && e.ctrlKey) goScrollTop();
+
+			//ctrl + left 移动至左下
+			if(e.keyCode == 37 && e.ctrlKey) initLeftDown();
+
+			//ctrl + left + shift移动至左上
+			if(e.keyCode == 37 && e.ctrlKey && e.shiftKey) initLeftUp();
+
+			//ctrl + right 移动至右下
+			if(e.keyCode == 39 && e.ctrlKey) initRightDown();
+
+			//ctrl + right + shift 移动至右上
+			if(e.keyCode == 39 && e.ctrlKey & e.shiftKey) initRightUp();
+
+		}
+
+		//更改控件位置
+
+		function initLeftDown(){
+				var obj = document.getElementById("BackToTop");
+				var width = window.screen.width;
+				width -= 130;
+				originHeight = window.screen.height - 200;
+				obj.style.setProperty("right",width + "px");
+		}
+
+		function initLeftUp(){
+			originHeight = 100;
+			var obj = document.getElementById("BackToTop");
+			var width = window.screen.width;
+			width -= 130;
+			obj.style.setProperty("right",width + "px");
+		}
+
+		function initRightDown(){
+			originHeight = window.screen.height - 200;
+			var obj = document.getElementById("BackToTop");
+			obj.style.setProperty("right","10px");
+		}
+
+		function initRightUp(){
+			originHeight = 100;
+			var obj = document.getElementById("BackToTop");
+			obj.style.setProperty("right","10px");
+		}
+
+		function init(){
+			if(arguments[0].hasOwnProperty("x")){
+				var right = window.screen.width - arguments[0].x;
+				console.log(right);
+				var obj = document.getElementById("BackToTop");
+				obj.style.setProperty("right",right + "px");
+				originHeight = arguments[0].y;
+			}
+		}
+
+	</script>
+
+
+    </body>
+</html>
